@@ -31,8 +31,12 @@ if __name__ == "__main__":
         print("3.выход")
         ans = input("выберите действие 1, 2 или 3 и нажмите enter ")
         if ans == '1':
-            userDAO.showAll()
-            selected = input("выберите аккаунт или напишите 'exit' для выхода ")
+            users = userDAO.showAll()
+            if(len(users)) == 0:
+                print("не созданно ни одного аккаунта")
+                continue
+            else:
+                selected = input("выберите аккаунт или напишите 'exit' для выхода ")
             if selected == 'exit':
                 break
         elif ans == '2':

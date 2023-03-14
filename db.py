@@ -20,8 +20,7 @@ class UserDAO:
             cur = con.cursor()
 
             res = cur.execute("select * from user")
-            for row in res:
-                print(row)
+            return res.fetchall()
 
     def get_max_id(self):
          with sq.connect(self.__dbname) as con:
