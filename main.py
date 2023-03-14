@@ -54,7 +54,7 @@ if __name__ == "__main__":
 
         
             for i in range(0, len(data['suggestions'])):
-                print(str(i+1) + ' ' + data['suggestions'][i]['value'])
+                print(str(i+1), data['suggestions'][i]['value'])
 
             print()
 
@@ -62,7 +62,7 @@ if __name__ == "__main__":
             if(coordinates == 'exit'):
                 break
 
-            print(data['suggestions'][int(coordinates)-1]['data']['geo_lat'] +' ' + data['suggestions'][int(coordinates)-1]['data']['geo_lon'])
+            print(data['suggestions'][int(coordinates)-1]['data']['geo_lat'], data['suggestions'][int(coordinates)-1]['data']['geo_lon'])
 
         
 
