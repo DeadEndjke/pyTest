@@ -5,7 +5,7 @@ from user import User
 class UserDAO:
     def __init__(self, dbname):
         self.__dbname = dbname
-        with sq.connect("db.db") as con:
+        with sq.connect(self.__dbname) as con:
             cur = con.cursor()
             
             cur.execute("""create table if not exists user(
