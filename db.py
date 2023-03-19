@@ -20,15 +20,6 @@ class SettingsDAO:
     def get_settings(self) -> list:
         return self.__cur.execute("select * from settings").fetchall()
 
-    # def add_user(self, user:User):
-    #     if isinstance(user, User):
-    #         with self.__con:
-    #             self.__cur.execute("insert into user (API_KEY, LANGUAGE) values(?, ?)", (user.key, user.lang))
-
-    # def get_id(self, user:User) -> str:
-    #     if isinstance(user, User):
-    #         return self.__cur.execute("select id from user where API_KEY=? and LANGUAGE=?",(user.key, user.lang)).fetchone[0]
-
     def get_key(self) -> str:
         return self.__cur.execute("select API_KEY from settings where id=1").fetchone()[0]
     
